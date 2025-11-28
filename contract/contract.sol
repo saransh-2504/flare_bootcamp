@@ -1,49 +1,35 @@
-// // SPDX-License-Identifier: MIT
-// pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-// contract MultiWill {
-//     struct Will {
-//         address recipient;
-//         uint256 amount;
-//         bool claimed;
-//     }
+contract AttendanceTracker {
 
-//     mapping(address => Will[]) public wills; // Each owner can have multiple wills
+    address public owner;
 
-//     function createWill(address _recipient) public payable {
-//         require(_recipient != address(0), "Invalid recipient address");
-//         require(msg.value > 0, "Amount must be greater than zero");
+    // Stores whether an address has marked attendance
+    mapping(address => bool) public hasMarked;
 
-//         wills[msg.sender].push(Will({
-//             recipient: _recipient,
-//             amount: msg.value,
-//             claimed: false
-//         }));
-//     }
+    // List of all attendees
+    address[] public attendees;
 
-//     function claimWill(address _owner, uint256 _index) public {
-//         require(_index < wills[_owner].length, "Invalid will index");
+    constructor() {
+        owner = msg.sender; // deployer becomes the admin
+    }
 
-//         Will storage userWill = wills[_owner][_index];
-//         require(msg.sender == userWill.recipient, "Only recipient can claim");
-//         require(!userWill.claimed, "Already claimed");
-//         require(userWill.amount > 0, "No funds to claim");
+    // Function to mark attendance
+    function markAttendance() public {
+        require(!hasMarked[msg.sender], "You have already marked attendance!");
 
-//         userWill.claimed = true;
-//         payable(userWill.recipient).transfer(userWill.amount);
-//     }
+        hasMarked[msg.sender] = true;
+        attendees.push(msg.sender);
+    }
 
-//     function getMyWillsCount() public view returns (uint256) {
-//         return wills[msg.sender].length;
-//     }
+    // Get total number of attendees
+    function getTotalAttendees() public view returns (uint256) {
+        return attendees.length;
+    }
 
-//     function getWill(address _owner, uint256 _index) public view returns (address recipient, uint256 amount, bool claimed) {
-//         require(_index < wills[_owner].length, "Invalid will index");
-//         Will memory userWill = wills[_owner][_index];
-//         return (userWill.recipient, userWill.amount, userWill.claimed);
-//     }
-
-//     function getContractBalance() public view returns (uint256) {
-//         return address(this).balance;
-//     }
-// }
+    // Get attendee by index
+    function getAttendee(uint256 index) public view returns (address) {
+        return attendees[index];
+    }
+}
