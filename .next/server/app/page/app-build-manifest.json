@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/1a0bc_next_dist_b770b9bf._.js",
+      "static/chunks/attendancetracker_app_favicon_ico_mjs_87aca06f._.js",
+      "static/chunks/[root-of-the-server]__d99b4884._.css",
+      "static/chunks/1a0bc_f9c7e51f._.js",
+      "static/chunks/1a0bc_@wagmi_core_dist_esm_8eac5cbf._.js",
+      "static/chunks/1a0bc_@tanstack_query-core_build_modern_20e17891._.js",
+      "static/chunks/1a0bc_@rainbow-me_rainbowkit_dist_ebf88b9b._.js",
+      "static/chunks/1a0bc_viem__esm_c58724c2._.js",
+      "static/chunks/1a0bc_@noble_curves_esm_e657754c._.js",
+      "static/chunks/1a0bc_ox__esm_d03184c7._.js",
+      "static/chunks/1a0bc_d07461fa._.js",
+      "static/chunks/attendancetracker_c3f7786c._.js",
+      "static/chunks/attendancetracker_app_layout_tsx_9826482e._.js",
+      "static/chunks/1a0bc_next_dist_client_components_builtin_global-error_d6287ca5.js",
+      "static/chunks/attendancetracker_6dfd2f82._.js",
+      "static/chunks/attendancetracker_app_page_tsx_d6287ca5._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_8047e3e1._.js",
+      "static/chunks/1a0bc_next_dist_compiled_react-dom_5051d81f._.js",
+      "static/chunks/1a0bc_next_dist_compiled_next-devtools_index_06ab8d1c.js",
+      "static/chunks/1a0bc_next_dist_compiled_49858bbe._.js",
+      "static/chunks/1a0bc_next_dist_client_f71efb0d._.js",
+      "static/chunks/1a0bc_next_dist_33bdeec0._.js",
+      "static/chunks/1a0bc_@swc_helpers_cjs_0824777f._.js",
+      "static/chunks/attendancetracker_a0ff3932._.js",
+      "static/chunks/turbopack-attendancetracker_66083968._.js"
+    ]
+  }
+}
